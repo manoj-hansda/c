@@ -13,26 +13,33 @@ int main()
 
     if(fp!=NULL) {
         printf("file opened succesfully.\n");
+        printf("Enter data (press 'z' when done'); \n");
 
-        int i,j=100;
-        char data[100][100];
+        int i=0, j, k=3;
+        char ch, data[100][100];
 
-        for(i=0; i<3; i++)
+        do
         {
+            printf("->");
             gets(data[i]);
             fwrite(data[i], sizeof(char), strlen(data[i]), fp);
-        }
-
+            i++;
+            fputc(32, fp);
+            printf("  continue ? (press 'y'): ");
+            scanf("%c", &ch);
+            getchar();
+        } while(ch=='y' || ch=='Y');
 
         fclose(fp);
-        printf("\ndata added to file succesfully.\n");
+        printf("\nFollowing data have been added to file succesfully.\n\n");
 
         fp = fopen(fileName, "r");
 
-        for(i=0; i<3; i++)
+        for(j=0; j<i; j++)
         {
-            fread(data[i], sizeof(char), strlen(data[i]), fp);
-            puts(data[i]);
+            fread(data[j], sizeof(char), strlen(data[j]), fp);
+            puts(data[j]);
+            fp++;
         }
     }
     else
