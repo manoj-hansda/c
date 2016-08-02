@@ -1,0 +1,4 @@
+[highlight color=”yellow”]-lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32[/highlight]
+
+open graphics.h file (pasted in include folder in step 3) with Notepad++. Go to line number 302, and replace that line with this line:
+[highlight color=”yellow”]int left=0, int top=0, int right=INT_MAX, int bottom=INT_MAX,[/highlight]
