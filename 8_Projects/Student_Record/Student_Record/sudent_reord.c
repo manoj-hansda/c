@@ -44,7 +44,7 @@ int main()
         default:
             break;
     }
-
+    
     return 0;
 }
 
@@ -92,7 +92,7 @@ void readFile()
 
     else
     {
-        while(fscanf(fp, "%d %s %f", &s.id, &s.name, &s.marks) > 0)
+        while(fscanf(fp, "%d %s %f", &s.id, s.name, &s.marks) > 0)
             printf("ID: %d, Name: %s, Marks: %.2f\n", s.id, s.name, s.marks);
 
         fclose(fp);
