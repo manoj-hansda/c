@@ -1,5 +1,0 @@
-#inlcude<stdio.h>
- main()
- {
-
- }
